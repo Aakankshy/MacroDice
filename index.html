@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Macro Dice</title>
+</head>
+<body>
+  <div class="app-container">
+    <div class="alert-wrapper" id="alert-popup">
+      <div class="alert-container">
+        <div class="alert-text">
+          Are you sure that you want to clear the results of all past macros?
+        </div>
+        <div class="alert-btns-container">
+          <input type="button" class="alert-btn-left" value="Clear" onclick="clearHistory(); unsummonClearPopup()">
+          <input type="button" class="alert-btn-right" value="Cancel" onclick="unsummonClearPopup()">
+        </div>
+      </div>
+    </div>
+    
+    <div class="history-macro-wrapper">
+      <div class="history-container" id="history-container">
+        <span class="history-header">Macro History</span>
+        <div class="history-body" id="history"></div>
+      </div>
+
+      <div class="haste-container">
+        <div class="defaults-container">
+          <input type="button" class="def-btn" value="1d4" onclick="autoMacro('1d4')">
+          <input type="button" class="def-btn" value="1d8" onclick="autoMacro('1d8')">
+          <input type="button" class="def-btn" value="1d6" onclick="autoMacro('1d6')">
+          <input type="button" class="def-btn" value="1d10" onclick="autoMacro('1d10')">
+          <input type="button" class="def-btn" value="1d12" onclick="autoMacro('1d12')">
+          <input type="button" class="def-btn" value="1d20" onclick="autoMacro('1d20')">
+          <input type="button" class="def-btn" value="1d100" onclick="autoMacro('1d100')">
+          <input type="button" class="def-btn" value="2(1d20)" onclick="autoMacro('2(1d20)')">
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="input-container">
+      <input type="text" class="macro-entry" id="input">
+      <input type="button" class="input-btn" id="submit-btn" value="Submit" onclick="submitMacro()">
+      <input type="button" class="input-btn" id="reset-btn" value="Clear" onclick="summonClearPopup()">
+    </div>
+
+    <script src="index.js"></script>
+  </div>
+</body>
+</html>
